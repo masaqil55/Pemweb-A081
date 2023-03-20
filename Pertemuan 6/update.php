@@ -24,10 +24,10 @@
         $state = $_POST['state'];
         $postalCode = $_POST['postalCode'];
         $country = $_POST['country'];
-        $salesRempEmployeeNumber = $_POST['salesRempEmployeeNumber'];
+        $salesRepEmployeeNumber = $_POST['salesRepEmployeeNumber'];
         $creditLimit = $_POST['creditLimit'];
 
-        $sql = "UPDATE customers SET customerName='$customerName', contactLastName='$contactLastName', contactFirstName='$contactFirstName', phone='$phone',addressLine1='$addressLine1',addressLine2='$addressLine2',city='$city',state='$state',postalCode='$postalCode',country='$country',salesRempEmployeeNumber='$salesRempEmployeeNumber',creditLimit='$creditLimit' WHERE customerNumber=$customerNumber";
+        $sql = "UPDATE customers SET customerName='$customerName', contactLastName='$contactLastName', contactFirstName='$contactFirstName', phone='$phone',addressLine1='$addressLine1',addressLine2='$addressLine2',city='$city',state='$state',postalCode='$postalCode',country='$country',salesRempEmployeeNumber='$salesRepEmployeeNumber',creditLimit='$creditLimit' WHERE customerNumber=$customerNumber";
 
         $result = mysqli_query(connection(),$sql);
         if ($result) {
@@ -131,23 +131,23 @@
 
                     <!-- Select -->
                     <?php
-                        $query = "SELECT employeeNumber FROM employees";
-                        $result = mysqli_query(connection(), $querySalesRemp);
+                        $querySalesRep = "SELECT employeeNumber FROM employees";
+                        $resultSalesRep = mysqli_query(connection(), $querySalesRep);
                     ?>
                     <div class="form-group">
                         <label>Sales Remp Employee Number</label>
-                        <select class="custom-select" name="salesRempEmployeeNumber" required="required">
+                        <select class="custom-select" name="salesRepEmployeeNumber" required="required">
                             <option value="">Pilih Salah Satu!!</option>
-                            <?php while($dataSalesRemp = mysqli_fetch_array($resultSalesRemp)): ?>
-                                <option value="<?= $dataSalesRemp['employeeNumber'] ?>" <?= $dataSalesRemp['employeeNumber'] == $data['salesRepEmployeeNumber'] ? "selected" : "" ?>><?= $dataSalesRemp['employeeNumber'] ?></option>
+                            <?php while($dataSalesRep = mysqli_fetch_array($resultSalesRep)): ?>
+                                <option value="<?= $dataSalesRep['employeeNumber'] ?>" <?= $dataSalesRep['employeeNumber'] == $data['salesRepEmployeeNumber'] ? "selected" : "" ?>><?= $dataSalesRep['employeeNumber'] ?></option>
                             <?php endwhile ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Credit Limit</label>
-                        <input type="text" class="form-control" placeholder="100000..." value="<?= $data['creditLimit'] ?> name="creditLimit" required="required">
-                    <?php endwhile ?>
+                        <input type="text" class="form-control" placeholder="100000..." value="<?= $data['creditLimit'] ?>" name="creditLimit" required="required">
                     </div>
+                    <?php endwhile ?>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </form>
             </main>

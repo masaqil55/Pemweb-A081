@@ -13,8 +13,7 @@
         $buyPrice = $_POST['buyPrice'];
         $MSRP = $_POST['MSRP'];
 
-        $query = "INSERT INTO products VALUES ('$productCode','$productName','$productLine','$productScale','$productVendor','$productVendor','$productDescription','$quantityInStock','$buyPrice','$MSRP')";
-
+        $query = "INSERT INTO products VALUES ('$productCode','$productName','$productLine','$productScale','$productVendor','$productDescription','$quantityInStock','$buyPrice','$MSRP')";
         $result = mysqli_query(connection(),$query);
         if ($result) {
             $status = 'okay';
@@ -69,7 +68,7 @@
            ?>
 
           <h2 style="margin: 30px 0 30px 0;">Form Products</h2>
-          <form action="formProduct.php" method="POST">
+          <form action="form Product.php" method="POST">
             <div class="form-group">
               <label>Product Code</label>
               <input type="text" class="form-control" placeholder="Product Code" name="productCode" required="required">
@@ -80,15 +79,15 @@
             </div>
             <!-- Select -->
             <?php 
-                  $query = "SELECT productLine FROM productlines";
-                  $result = mysqli_query(connection(),$query);
+                  $queryP = "SELECT productLine FROM productlines";
+                  $result = mysqli_query(connection(),$queryP);
                  ?>
             <div class="form-group">
               <label>Product Line</label>
               <select class="custom-select" name="productLine" required="required">
                 <option value="">Pilih Salah Satu</option>
                 <?php while($data = mysqli_fetch_array($result)): ?>
-                  <option value="<?= $data['productlines'] ?>"><?= $data['productlines'] ?></option>
+                  <option value="<?= $data['productLine'] ?>"><?= $data['productLine'] ?></option>
                 <?php endwhile;?>
               </select>
             </div>

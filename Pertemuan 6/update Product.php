@@ -90,18 +90,18 @@
             </div>
             <div class="form-group">
               <label>Product Name</label>
-              <input type="text" class="form-control" placeholder="Product Name" value="<?= $data['producName'] ?>" name="productName" required="required">
+              <input type="text" class="form-control" placeholder="Product Name" value="<?= $data['productName'] ?>" name="productName" required="required">
             </div>
             <!-- Select -->
             <?php 
-                  $query = "SELECT productLine FROM productlines";
+                  $queryL = "SELECT productLine FROM productlines";
                   $resultL = mysqli_query(connection(),$queryL);
                  ?>
             <div class="form-group">
               <label>Product Line</label>
               <select class="custom-select" name="productLine" required="required">
                 <option value="">Pilih Salah Satu</option>
-                <?php while($data = mysqli_fetch_array($resultL)): ?>
+                <?php while($dataLine = mysqli_fetch_array($resultL)): ?>
                     <option value="<?= $dataLine['productLine'] ?>" <?= $dataLine['productLine'] == $data['productLine'] ? "selected" : "" ?>><?= $dataLine['productLine'] ?></option>
                 <?php endwhile;?>
               </select>
@@ -120,7 +120,7 @@
             </div>
             <div class="form-group">
               <label>Quantity In Stock</label>
-              <input type="text" class="form-control" placeholder="Quantity In Stock" value="<?= $data['quntityInStock'] ?>" name="quantityInStock" required="required">
+              <input type="text" class="form-control" placeholder="Quantity In Stock" value="<?= $data['quantityInStock'] ?>" name="quantityInStock" required="required">
             </div>
             <div class="form-group">
               <label>Buy Price</label>

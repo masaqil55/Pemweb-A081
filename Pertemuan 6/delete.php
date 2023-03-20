@@ -3,7 +3,7 @@
 
     $status = '';
     $result = '';
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (isset($_GET['id'])) {
             $customerNumber = $_GET['id'];
             $query = "DELETE FROM customers WHERE customerNumber = $customerNumber";

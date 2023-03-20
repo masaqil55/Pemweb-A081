@@ -84,9 +84,9 @@
                     <td><?php echo $data['buyPrice']; ?></td>
                     <td><?php echo $data['MSRP']; ?></td>
                     <td>
-                      <a href="<?php echo "updateProduct.php?id=".$data['productCode']; ?>" class="btn btn-outline-warning btn-sm"> Update</a>
+                      <a href="<?php echo "update Product.php?id=".$data['productCode']; ?>" class="btn btn-outline-warning btn-sm"> Update</a>
                       &nbsp;&nbsp;
-                      <a href="<?php echo "deleteProduct.php?id=".$data['productCode']; ?>" class="btn btn-outline-danger btn-sm"> Delete</a>
+                      <a href="<?php echo "delete Product.php?id=".$data['productCode']; ?>" class="btn btn-outline-danger btn-sm"> Delete</a>
                     </td>
                   </tr>
                  <?php endwhile ?>

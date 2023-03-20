@@ -14,11 +14,11 @@
         $state = $_POST['state'];
         $postalCode = $_POST['postalCode'];
         $country = $_POST['country'];
-        $salesRempEmployeeNumber = $_POST['salesRempEmployeeNumber'];
+        $salesRepEmployeeNumber = $_POST['salesRepEmployeeNumber'];
         $creditLimit = $_POST['creditLimit'];
 
-        $query = "INSERT INTO customers VALUES ('$customerNumber','$customerName','$contactLastName','$contactFirstName','$phone','$addressLine1','$addressLine2','$city','$state','$postalCode','$country','$salesRempEmployeeNumber','$creditLimit')";
-
+        $query = "INSERT INTO customers VALUES ('$customerNumber','$customerName','$contactLastName','$contactFirstName','$phone','$addressLine1','$addressLine2','$city','$state','$postalCode','$country','$salesRepEmployeeNumber','$creditLimit')";
+        echo $query;
         $result = mysqli_query(connection(),$query);
         if ($result) {
             $status = 'okay';
@@ -118,15 +118,15 @@
 
                     <!-- Select -->
                     <?php
-                        $query = "SELECT employeeNumber FROM employees";
-                        $result = mysqli_query(connection(), $query);
+                        $queryS = "SELECT employeeNumber FROM employees";
+                        $resultS = mysqli_query(connection(), $queryS);
                     ?>
                     <div class="form-group">
-                        <label>Sales Remp Employee Number</label>
+                        <label>Sales Rep Employee Number</label>
                         <select class="custom-select" name="salesRepEmployeeNumber" required="required">
                             <option value="">Pilih Salah Satu!!</option>
-                            <?php while($data = mysqli_fetch_array($result)): ?>
-                                <option value="<? $data['employeeNumber'] ?>"><?= $data['employeeNumber'] ?></option>
+                            <?php while($data = mysqli_fetch_array($resultS)): ?>
+                                <option value="<?= $data['employeeNumber'] ?>"><?= $data['employeeNumber'] ?></option>
                             <?php endwhile ?>
                         </select>
                     </div>
