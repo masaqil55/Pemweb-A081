@@ -74,6 +74,27 @@
 
             }
            ?>
+            <?php  
+                if (isset($_GET['status'])) {
+                    $status_bus = $_GET['status'];
+                    $queryBus = "SELECT * FROM bus WHERE 'status' = '$status_bus'";
+                } else {
+                    $queryBus = "SELECT * FROM bus";
+                }
+                $hasil = mysqli_query(connection(), $queryBus);
+            ?>
+            <h2>status = <?= $status_bus ?></h2>
+            <p>FILTER</p>
+            <form action="" method="get">
+                <select name="status" id="status" required>
+                    <option value="">PILIH</option>
+                    <option value="1">Active</option>
+                    <option value="2">Cadangan</option>
+                    <option value="0">Repair/Perbaikan</option>
+                </select>
+                <button type="submit">Pilih</button>
+                <a href="bus.php"><button type="button">Reset</button></a>
+            </form>
           <h2 style="margin: 30px 0 30px 0;">Tabel BUS Trans UPN</h2>
           <div>
             <table border="1">
