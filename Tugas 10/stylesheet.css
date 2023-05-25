@@ -1,0 +1,81 @@
+body {
+  background-color: #dab9a02f;
+  margin: 0;
+}
+h1 {
+  font-size: 38px;
+}
+nav {
+  height: 50px;
+  background-color: #068da9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  margin: 0px;
+  padding: 20px;
+}
+.items1 a {
+  background-color: #7e1717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.items2 a {
+  background-color: #7e1717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana,  sans-serif;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper table {
+  width: 1000px;
+  height: 500px;
+  border-color: #7e1717;
+}
+
+.wrapper h2 {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+}
+
+.tableGua thead {
+  background-color: #e55807;
+  padding: 4px;
+}
+
+.tableGua th {
+  font-size: 22px;
+  color: #ecf8f9;
+}
